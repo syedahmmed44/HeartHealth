@@ -3,7 +3,6 @@ import axios from "../Services/axiosInterceptor";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
-  // React hooks to manage state
   const navigate = useNavigate();
   const [showError, setShowError] = useState(false);
   const [input, setInput] = useState({
@@ -12,14 +11,10 @@ const Login = () => {
   });
   const [error, setError] = useState(null);
 
-  // Function to handle login form submission
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      // Make a POST request to the login endpoint
       const response = await axios.post("api/auth/users/login", input);
-
-      // If the login is successful, store user data in local storage and navigate to home
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("name", response.data.name);
@@ -27,16 +22,13 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      // If login fails, set an error message
       setError("Invalid Login Details (or) User not registered");
       setShowError(true);
     }
   };
 
-  // JSX structure for the login component
   return (
     <>
-      {/* Global Styles */}
       <style>
         {`
           .divider:after,
@@ -46,18 +38,16 @@ const Login = () => {
             height: 1px;
             background: #eee;
           }
-          
+
           .h-custom {
             height: calc(100% - 73px);
           }
-          
+
           @media (max-width: 450px) {
             .h-custom {
               height: 100%;
             }
           }
-
-          /* Custom Color Theme */
 
           .bg-primary {
             background-color: #8585cf;
@@ -76,36 +66,75 @@ const Login = () => {
           .link-danger {
             color: #8585cf;
           }
-          .bg-purple{
-            background-color:#6d6da9
+
+          .bg-purple {
+            background-color: #6d6da9;
+          }
+
+          /* Hero Section Styles */
+          .hero-section {
+            background-color: #6d6da9; /* Hero background color */
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            height: 50vh; /* 50% of the viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+
+          .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+          }
+
+          .hero-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+          }
+
+          .hero-banner {
+            background-color: #ffcc00;
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
           }
         `}
       </style>
 
-      {/* Login Section */}
       <section className="vh-100">
         <div className="container-fluid h-custom">
+          {/* Hero Section */}
+          <div className="hero-section">
+            <div className="hero-title">Clinical Data Standardization</div>
+            <div className="hero-text">
+              Clinical Data Standardization is essential for improving data consistency and accuracy in healthcare applications. By ensuring the standardization of data formats, we can provide better insights, make data-driven decisions, and improve patient care across various systems and platforms.
+            </div>
+          </div>
+
           <div className="row d-flex justify-content-center align-items-center h-100">
-            {/* Image Section */}
             <div className="col-md-9 col-lg-6 col-xl-5">
-              <img src="logon.png" className="img-fluid" alt="Sample image" />
+              <img src="logon1.png" className="img-fluid" alt="Sample image" />
             </div>
 
-            {/* Login Form Section */}
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <form onSubmit={handleLogin}>
                 <div className="text-center mb-2">
                   <h2 className="mb-5">Login</h2>
                 </div>
 
-                {/* Error Alert */}
                 {showError && (
                   <div className="alert alert-warning" role="alert">
                     {error}
                   </div>
                 )}
 
-                {/* Email Input */}
                 <div className="form-outline mb-4">
                   <label className="form-label" htmlFor="form3Example3">
                     Email address
@@ -126,7 +155,6 @@ const Login = () => {
                   />
                 </div>
 
-                {/* Password Input */}
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example4">
                     Password
@@ -147,7 +175,6 @@ const Login = () => {
                   />
                 </div>
 
-                {/* Remember Me and Forgot Password Links */}
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <div className="form-check">
                     <input
@@ -165,12 +192,11 @@ const Login = () => {
                   </Link>
                 </div>
 
-                {/* Login Button and Registration Link */}
                 <div className="text-center text-lg-start">
                   <button
                     type="submit"
                     className="btn btn-primary btn-lg"
-                    style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}
+                    style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                   >
                     Login
                   </button>

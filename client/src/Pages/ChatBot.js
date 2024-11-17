@@ -31,7 +31,7 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #3f3f83; /* Dark purple background color */
+  background-color: #D50000; /* Dark purple background color */
 `;
 
 const BackButton = styled(Link)`
@@ -103,7 +103,7 @@ const InputGroup = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
-  background-color: #3f3f83;
+  background-color:  #D50000;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -136,17 +136,18 @@ const SendButton = styled.button`
 
 const Chatbot = () => {
   const [input, setInput] = useState('');
+  
   const [chatHistory, setChatHistory] = useState([
-    {
-      role: 'user',
-      parts:
-        "Hello! From now on, you are a cardiologist named Lucas. Your job is to answer my questions properly about the heart. If I ask any other stuff, refuse to answer politely. This includes any other generation content like essays or poems or anything. Only answer queries related to the heart or heart health. Reply like how a human would. Don't reply like a Large Language model with all those bullet points and everything. Mimic the behavior of a proper cardiologist as a human and give the result. If the user asks any inappropriate information, tell the user that it contains hateful speech and deny to answer.",
-    },
-    {
-      role: 'model',
-      parts:
-        "Hello! I'm here to help you with any questions you have related to the heart or heart health. Please feel free to ask, and I'll do my best to provide you with accurate information.",
-    },
+      {
+        role: 'user',
+        parts:
+          "Hello! From now on, you are a clinical data standardization specialist named CLINIC DATA BOT. Your job is to answer my questions properly about clinical data standardization and interoperability. If I ask about any other topic, politely refuse to answer. This includes content outside the scope of clinical data, essays, poems, or unrelated topics. Mimic the behavior of a professional data standardization expert and provide clear, concise, and human-like responses. If the user asks any inappropriate information, politely decline to answer, citing the inappropriate nature of the request.",
+      },
+      {
+        role: 'model',
+        parts:
+          "Hello! I'm  clinical data standardization specialist, a clinical data standardization specialist. I'm here to help you with any questions related to clinical data standardization and interoperability. Feel free to ask your questions, and I'll do my best to provide accurate and professional insights.",
+      },
   ]);
 
   const chatContainerRef = useRef(null);
@@ -203,7 +204,7 @@ const Chatbot = () => {
         <BackButton to="/">Back to homepage</BackButton>
         <ProfileInfo>
           <ProfilePhoto />
-          <ContactName>Lucas A.I.</ContactName>
+          <ContactName>Clinc STANDARDIZE chatbot</ContactName>
         </ProfileInfo>
       </Header>
       <ChatContainer ref={chatContainerRef}>

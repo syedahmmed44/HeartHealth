@@ -61,7 +61,7 @@ class AuthController {
         if (isUser) {
           const isVerifiedProfile = await authModel.findById(isUser._id);
 
-          if (isVerifiedProfile.isVerified) {
+          if (!isVerifiedProfile.isVerified) {
             if (
               email === isUser.email &&
               (await bcryptjs.compare(password, isUser.password))

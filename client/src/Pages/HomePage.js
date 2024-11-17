@@ -70,14 +70,14 @@ const HomePage = () => {
   const [greeting, setGreeting] = useState('');
   const [funFact, setFunFact] = useState('Loading...');
   const [tips, setTips] = useState([
-    "Explore different assessment forms 📝!",
-    "Take the Swift forms for faster, accurate results and tracking!",
-    "Take the Swift 2.0 form for more casual assessment!",
-    "Have a medical report ⚕️? Scan it using our AI and get recomendations and suggestions!",
-    "Use our own chatbot 🤖 for any queries related to your heart health!",
-    "Go to your Profile to check your heart tracking results 🏃!",
-    "Find nearby hospitals and cardiologists for instant help 😷!",
-    "Take the Self-Assessment Test for more detailed and personalised results!",
+   "Ensure consistent and accurate data for better healthcare outcomes through standardization! 🏥",
+    "Adopt standardized formats to improve the reliability and comparability of your health data! 📊",
+    "Use uniform data standards to make your medical records more interoperable across systems! 💻",
+    "Standardizing clinical data ensures that your healthcare providers can make informed decisions faster! ⏱️",
+    "Clinical data standardization helps enhance patient safety and the quality of care! 🛡️",
+    "Better data standards lead to improved medical research and more effective treatments! 🔬",
+    "Standardized clinical data makes it easier to share vital health information across institutions! 🏥",
+    "Support data standardization for a seamless and efficient healthcare experience! 🌐"
   ]);
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
   useEffect(() => {
@@ -95,7 +95,7 @@ const HomePage = () => {
   }, []);
   // Function to generate a fun fact using Google Generative AI
   const generateFunFact = async () => {
-    const prompt = 'Give me a surprising and unknown fact about the human heart. (1 line only). Dont include information like it beats 100,000 times a day or something common. Show me something that\'s uncommon. The facts should be both theoritical and biological too. ';
+    const prompt = 'Give me an importan fact about clinical data standardization in healthcare.';
     try {
       const result = await model.generateContent(prompt);
       const response = await result.response;
@@ -103,7 +103,7 @@ const HomePage = () => {
       setFunFact(text);
     }
     catch (error) {
-      setFunFact('Oops! Something went wrong!');
+      setFunFact('Standardize your institute data for better healthcare outcomes through standardization! 🏥');
     }
   };
   // JSX structure for the HomePage component
@@ -204,7 +204,7 @@ const HomePage = () => {
                     </div>
                     <hr />
                     <p className="lead">
-                      <b>Fun fact: </b>
+                      <b> </b>
                       {funFact}
                     </p>
                   </div>
@@ -222,54 +222,63 @@ const HomePage = () => {
       </section>
 
       {/* Additional Content Section */}
-      <section className="remaining-info-section additional-content py-5 text-white" style={{ backgroundColor: '#3f3f83' }}>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <h3 className="fw-bold mb-4">Discover the Future of Heart Health with Our AI-based App</h3>
-              <p>
-                Our commitment to your well-being has driven us to enhance our app significantly. Explore the cutting-edge features that make us a leader in heart health management.
-              </p>
-              <p>
-                With the introduction of Swift, our state-of-the-art assessment forms powered by machine learning models, you can now receive near-accurate results tailored to your unique profile. The Swift forms, coupled with our self-assessment tool, offer personalized insights into your heart health, empowering you to make informed decisions for a healthier lifestyle.
-              </p>
-              <p>
-                Our app goes beyond traditional assessments. We've incorporated a revolutionary feature allowing you to upload and analyze any medical report. Uncover trends and gain deeper insights into your health with our comprehensive analysis tool.
-              </p>
-              <p className="fw-bold mt-3">Meet Our Team:</p>
-              <ul>
-                {/* Updated list of team members */}
-                <li title='Chuuha 🐭'>Aka Meher Archana (22BD1A0541)</li>
-                <li title='Unfunny Charan'>Anpur Phani Charan (22BD1A1201)</li>
-                <li title='Sai Pratham'>Sesha Sai Pratiek Yeggina (22BD1A1253)</li>
-                <li title='Frontend dev'>Siddharth Katrapalli (22BD1A1228)</li>
-                <li title='???'>Srikar Veluvali (22BD1A1264)</li>
-                <li title='SmashKarts'>U V N Vardhan (22BD1A1262)</li>
-              </ul>
-            </div>
-            <div className="col-md-6">
-              <h3 className="fw-bold mb-4">Embark on Your Journey to Heart Wellness</h3>
-              <p>
-                Begin your path to a healthier heart by taking our revamped comprehensive assessment forms - Swift. These forms, driven by advanced machine learning models, ensure near-accurate results tailored to your individual health profile.
-              </p>
-              <p>
-                Our self-assessment form further adds a personalized touch, providing insights into your health based on your unique lifestyle, habits, and medical history. Your well-being is our priority, and our tools are designed to empower you with the information you need to lead a healthier and happier life.
-              </p>
-              <p>
-                The innovation doesn't stop there. Our app now boasts a groundbreaking Chatbot feature. Engage in conversations ranging from heart health to general health queries. Our Chatbot is your virtual companion, ready to assist you on your journey to well-being.
-              </p>
-              <p>
-                Taking the assessment is simple and confidential. Rest assured, your data is secure, and the results are readily available for your review. We believe that understanding your heart health is the first step towards making informed decisions for a healthier and happier life.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="remaining-info-section additional-content py-5 text-white" style={{ backgroundColor: '#FF5252' }}>
+  <div className="container">
+    <div className="row">
+      <div className="col-md-6">
+        <h3 className="fw-bold mb-4">Discover the Future of Healthcare with Our Clinical Standardization & Interoperability Framework</h3>
+        <p>
+          Our commitment to improving healthcare has led us to create a cutting-edge framework that standardizes and enhances the interoperability of clinical data. Explore the powerful features that make our app a leader in healthcare data management and analysis.
+        </p>
+        <p>
+          With the integration of advanced machine learning models such as Sentence Transformer and Word2Vec, we now provide near-instant insights into clinical data. These models allow us to accurately analyze patient records, ensuring that all data points are standardized for optimal interoperability across different healthcare systems. 
+        </p>
+        <p>
+          Our app allows you to upload clinical documents and analyze trends with high precision. With the power of Sentence Transformer, we can understand the contextual meaning behind medical texts and provide you with insights that bridge the gap between different clinical systems. The Word2Vec model further enhances our ability to recognize relationships between medical terms and diagnoses, facilitating seamless data exchange across platforms.
+        </p>
+        <p className="fw-bold mt-3">Meet Our Team:</p>
+        <ul>
+          {/* Updated list of team members */}
+          <li title='rubaiayat 🐭'>M. Rubaiyat Hossain Mondal</li>
+          <li title='Syed'>Syed Ahmmed</li>
+          {/* <li title='Sai Pratham'>Sesha Sai Pratiek Yeggina (22BD1A1253)</li>
+          <li title='Frontend dev'>Siddharth Katrapalli (22BD1A1228)</li>
+          <li title='???'>Srikar Veluvali (22BD1A1264)</li>
+          <li title='SmashKarts'>U V N Vardhan (22BD1A1262)</li> */}
+        </ul>
+      </div>
+      <div className="col-md-6">
+        <h3 className="fw-bold mb-4">Embark on Your Journey to Standardized Healthcare</h3>
+        <p>
+          Start by exploring our revamped framework for clinical standardization. Powered by the latest machine learning models like Sentence Transformer, our app ensures near-accurate results that are customized to your specific healthcare needs.
+        </p>
+        <p>
+          The self-assessment tool allows patients to upload their clinical records, which are then transformed into standardized data. The app utilizes Word2Vec to analyze the relationships between various medical conditions, ensuring that information is seamlessly integrated into healthcare systems for improved interoperability.
+        </p>
+        <p>
+          The innovation doesn’t stop there. We’ve added an interactive feature that allows patients to query the system using natural language. Our AI-powered chatbot, enhanced by advanced text models, provides immediate insights and recommendations based on standardized clinical data.
+        </p>
+        <p>
+          Taking assessments is straightforward and confidential. Your data remains secure while our framework ensures that it can be easily exchanged with healthcare providers worldwide, improving treatment efficiency and decision-making.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* <div className="container">
+  <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p className="col-md-4 mb-0 text-body-secondary">© Data Analytics Lab</p>
+    <a href="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    </a>
+  </footer>
+</div> */}
+
 
 
       <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p className="col-md-4 mb-0 text-body-secondary">© Heart Health App By G114</p>
+          <p className="col-md-4 mb-0 text-body-secondary">© Data Analytics Lab</p>
 
           <a href="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
 

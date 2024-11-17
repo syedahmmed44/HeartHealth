@@ -18,7 +18,7 @@ export default function NavBar() {
         const { latitude, longitude } = position.coords;
 
         // Construct the Google Maps URL with the obtained location
-        const mapsUrl = `https://www.google.co.in/maps/search/cardiologists+or+hospitals+near+me/@${latitude},${longitude},13z/data=!3m1!4b1?entry=ttu`;
+        const mapsUrl = `https://www.google.co.in/maps/search/hospitals+near+me/@${latitude},${longitude},13z/data=!3m1!4b1?entry=ttu`;
 
         // Redirect the user to the generated Google Maps URL
         window.open(mapsUrl, '_blank');
@@ -28,10 +28,10 @@ export default function NavBar() {
     }
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light-purple fixed-top" style={{ backgroundColor: '#3f3f83' }}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light-purple fixed-top" style={{ backgroundColor: '#D50000' }}>
       <div className="container">
         <Link className="navbar-brand text-white" to="/">
-          💟 Heart Health
+        📊 🔑 ClinStandardize And Interoperabiliy 🌍
         </Link>
 
         <button
@@ -51,7 +51,7 @@ export default function NavBar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item dropdown ">
               <a className="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Assessment Forms
+                Upload Your institute Clincal Data
               </a>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" to="/assessment">Swift </Link></li>
@@ -62,21 +62,21 @@ export default function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="/analyse-report">
-                Analyse a Medical Report <img src="AI.png" alt="AI" style={{ width: '16px', height: '16px', marginLeft: '4px' }} />
+                Analyse The Report <img src="AI.png" alt="AI" style={{ width: '16px', height: '16px', marginLeft: '4px' }} />
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link text-white" to="/self-assessment">
                 Take a Self-Assessment Test <img src="AI.png" alt="AI" style={{ width: '16px', height: '16px', marginLeft: '4px' }} />
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link text-white" to="/chat">
-                Talk to our Chatbot <img src="AI.png" alt="AI" style={{ width: '16px', height: '16px', marginLeft: '4px' }} />
+                Querybot <img src="AI.png" alt="AI" style={{ width: '16px', height: '16px', marginLeft: '4px' }} />
               </Link>
             </li>
             <li className="nav-item">
-              <button className="nav-link text-white" onClick={handleFindCardiologists}>Find nearby cardiologists</button>
+              <button className="nav-link text-white" onClick={handleFindCardiologists}>Find nearby hospitals</button>
             </li>
 
           </ul>
