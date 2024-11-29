@@ -27,13 +27,13 @@ class AuthController {
           const secretKey = "HeartHealthProjectKMIT";
           const token = jwt.sign({ email: email }, secretKey, { expiresIn: "5m" });
           const link = `http://localhost:9000/api/auth/verify/${token}`
-          sendEmailtoUser(link, email);
+          // sendEmailtoUser(link, email);
           // Save the user to MongoDB
           const newUser = authModel({
             name,
             email,
             password: hashedPassword,
-            isVerified: false,
+            isVerified: true,
           });
 
           const resUser = await newUser.save();
@@ -61,7 +61,7 @@ class AuthController {
         if (isUser) {
           const isVerifiedProfile = await authModel.findById(isUser._id);
 
-          if (!isVerifiedProfile.isVerified) {
+          if (isVerifiedProfile.isVerified) {
             if (
               email === isUser.email &&
               (await bcryptjs.compare(password, isUser.password))

@@ -139,7 +139,7 @@ const Register = () => {
                 {/* Registration Success Message */}
                 {registrationSuccess && (
                   <div className="alert alert-warning mt-2" role="alert">
-                    Please Verify your given email address...
+                     Registering.....
                   </div>
                 )}
 
