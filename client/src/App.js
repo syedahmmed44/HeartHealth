@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Components
 import Login from "./Components/Login";
 import Register from "./Components/Register";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 // Services
 import ProtectedRoutes from "./Services/ProtectedRoutes";
