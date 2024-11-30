@@ -86,7 +86,7 @@ To set up the project locally, follow these steps:
    Open three terminal windows:
    - In the first terminal, run the Flask server:
      ```bash
-     flask run
+     flask --app app run
      ```
    - In the second terminal, run the Express server:
      ```bash
